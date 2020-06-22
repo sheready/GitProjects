@@ -4,7 +4,6 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'https://api.github.com/users/sheready?access_token=d04d0625c7bf7e0d44f944b27902329f57930b33'
 };
 
 /*
