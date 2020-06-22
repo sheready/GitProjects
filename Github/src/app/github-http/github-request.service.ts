@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from '../../environments/environment';
 import { Github } from '../github-class/github';
-import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
-import { error } from '@angular/compiler/src/util';
+import { map } from 'rxjs/operators';
+
 
 @Injectable({
   providedIn: 'root'
@@ -11,8 +11,9 @@ import { error } from '@angular/compiler/src/util';
 export class GithubRequestService {
   [x: string]: any;
       github: Github;
-  name: any;
+      name: any;
   constructor(private http: HttpClient) {
+    this.name = 'sheready';
     this.github = new Github('', '', '', '', '');
    }
    githubRequest(){
@@ -25,6 +26,7 @@ export class GithubRequestService {
        url: string;
 
 }
+
      // tslint:disable-next-line: prefer-const
      let promise = new Promise((resolve, reject) => {
         this.http.get<ApiResponse>(environment.apiUrl).toPromise().then(response => {

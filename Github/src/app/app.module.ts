@@ -8,6 +8,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { ProfileComponent } from './profile/profile.component';
 import { HttpClientModule } from '@angular/common/http';
+import { GithubRequestService } from './github-http/github-request.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +21,7 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [GithubRequestService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
